@@ -434,6 +434,25 @@
   background: #ffffff;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 28px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
 @media (max-width: 900px) {
   .nav-links {
     display: none;

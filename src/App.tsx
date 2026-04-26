@@ -170,6 +170,10 @@ function App() {
           Join the early-access list for a local-first iOS meeting transcription app built around WhisperKit/CoreML, user-controlled retention, and compliance-sensitive workflows.
         </p>
         <a className="primary-button" href="#top">Back to top</a>
+        <div className="footer-links" aria-label="Public pages">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/support">Support</a>
+        </div>
       </section>
     </main>
   )
