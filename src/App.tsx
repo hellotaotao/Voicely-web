@@ -11,9 +11,10 @@ function App() {
         </a>
         <div className="nav-links">
           <a href="#problems">Problems</a>
-          <a href="#features">Features</a>
+          <a href="#difference">Difference</a>
+          <a href="#use-cases">Use cases</a>
           <a href="#workflow">Workflow</a>
-          <a href="#proof">Proof</a>
+          <a href="#trust">Trust</a>
         </div>
         <a className="nav-cta" href="#waitlist">Join waitlist</a>
       </nav>
@@ -25,7 +26,7 @@ function App() {
           <p className="hero-subtitle">{voicelyMessaging.hero.subheadline}</p>
           <div className="hero-actions" aria-label="Primary actions">
             <a className="primary-button" href="#workflow">See the workflow</a>
-            <a className="secondary-button" href="#features">Explore features</a>
+            <a className="secondary-button" href="#difference">Why local matters</a>
           </div>
         </div>
 
@@ -33,13 +34,13 @@ function App() {
           <div className="phone-frame">
             <div className="phone-topbar">
               <span>9:41</span>
-              <span>Voice Notes</span>
+              <span>Sensitive Meeting</span>
               <span>●●●</span>
             </div>
             <div className="recording-card active-recording">
               <div>
-                <p className="card-label">Recording now</p>
-                <h2>Product idea while walking</h2>
+                <p className="card-label">Recording locally</p>
+                <h2>Client compliance review</h2>
               </div>
               <div className="waveform" aria-hidden="true">
                 {Array.from({ length: 18 }).map((_, index) => (
@@ -47,26 +48,26 @@ function App() {
                 ))}
               </div>
               <div className="record-meta">
-                <span>00:42</span>
-                <span>On-device</span>
+                <span>47:18</span>
+                <span>On-device transcription</span>
               </div>
             </div>
 
             <div className="transcript-card">
               <p className="card-label">Transcript</p>
               <p>
-                “The important part is not just saving audio. It is turning a quick spoken thought into text I can search, reuse, and trust later.”
+                “We need a searchable transcript for the file, but the raw meeting audio cannot be sent to an outside transcription service.”
               </p>
             </div>
 
             <div className="mini-list">
               <div>
-                <strong>School pickup reminder</strong>
-                <span>Transcribed · 12 sec</span>
+                <strong>Government program review</strong>
+                <span>Local transcript · 52 min</span>
               </div>
               <div>
-                <strong>Client call follow-up</strong>
-                <span>Queued · iCloud sync</span>
+                <strong>HR interview notes</strong>
+                <span>Review audio · export transcript</span>
               </div>
             </div>
           </div>
@@ -81,8 +82,8 @@ function App() {
 
       <section id="problems" className="content-section warm-section">
         <div className="section-heading">
-          <p className="eyebrow">Why it matters</p>
-          <h2>Voice capture is easy. Recovering value from voice is the hard part.</h2>
+          <p className="eyebrow">Why local matters</p>
+          <h2>Cloud transcription is useful until policy says the audio cannot leave.</h2>
         </div>
         <div className="card-grid two-column">
           {voicelyMessaging.painPoints.map((pain) => (
@@ -95,10 +96,10 @@ function App() {
         </div>
       </section>
 
-      <section id="features" className="content-section light-section">
+      <section id="difference" className="content-section light-section">
         <div className="section-heading centered">
-          <p className="eyebrow">Product shape</p>
-          <h2>A native iPhone notebook for spoken thoughts, private transcripts, and synced memory.</h2>
+          <p className="eyebrow">The difference</p>
+          <h2>Local WhisperKit/CoreML processing makes privacy a product boundary.</h2>
         </div>
         <div className="feature-grid">
           {voicelyMessaging.features.map((feature) => (
@@ -110,10 +111,26 @@ function App() {
         </div>
       </section>
 
+      <section id="use-cases" className="content-section warm-section">
+        <div className="section-heading">
+          <p className="eyebrow">Use cases</p>
+          <h2>Built for meetings where convenience has to answer to policy.</h2>
+        </div>
+        <div className="card-grid two-column">
+          {voicelyMessaging.useCases.map((useCase) => (
+            <article className="insight-card" key={useCase.title}>
+              <span className="dot" />
+              <h3>{useCase.title}</h3>
+              <p>{useCase.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="workflow" className="workflow-section">
         <div className="section-heading">
-          <p className="eyebrow">From thought to searchable memory</p>
-          <h2>One simple loop, designed around the moment you actually need it.</h2>
+          <p className="eyebrow">Meeting workflow</p>
+          <h2>Record, transcribe locally, review, then decide what should remain.</h2>
         </div>
         <div className="workflow-rail">
           {voicelyMessaging.workflow.map((step, index) => (
@@ -126,23 +143,31 @@ function App() {
         </div>
       </section>
 
-      <section id="proof" className="proof-section">
+      <section id="trust" className="proof-section">
         <div>
-          <p className="eyebrow">Built like a real iPhone app</p>
-          <h2>Private by design, native by default, and grounded in the existing Voicely app architecture.</h2>
+          <p className="eyebrow">Trust and privacy</p>
+          <h2>Designed for sensitive meeting audio from the first product decision.</h2>
+          <ul className="proof-list" aria-label="Architecture proof points">
+            {voicelyMessaging.proof.map((proof) => (
+              <li key={proof}>{proof}</li>
+            ))}
+          </ul>
         </div>
-        <ul>
-          {voicelyMessaging.proof.map((proof) => (
-            <li key={proof}>{proof}</li>
+        <div className="trust-stack">
+          {voicelyMessaging.trust.map((item) => (
+            <article className="trust-card" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
           ))}
-        </ul>
+        </div>
       </section>
 
       <section id="waitlist" className="final-cta">
         <p className="eyebrow">Voicely</p>
-        <h2>Speak now. Search later. Keep the note useful.</h2>
+        <h2>Turn sensitive meetings into transcripts without a cloud transcription handoff.</h2>
         <p>
-          Join the early-access list for an iOS voice notes app built around fast capture, on-device transcription, and iCloud-backed continuity.
+          Join the early-access list for a local-first iOS meeting transcription app built around WhisperKit/CoreML, user-controlled retention, and compliance-sensitive workflows.
         </p>
         <a className="primary-button" href="#top">Back to top</a>
       </section>

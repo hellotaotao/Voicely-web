@@ -253,7 +253,7 @@
 
 .audience-strip {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1px;
   overflow: hidden;
   border: 1px solid rgba(18, 18, 18, 0.08);
@@ -312,7 +312,8 @@
 
 .insight-card,
 .feature-card,
-.workflow-step {
+.workflow-step,
+.trust-card {
   padding: 28px;
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(18, 18, 18, 0.08);
@@ -333,7 +334,8 @@
 
 .insight-card h3,
 .feature-card h3,
-.workflow-step h3 {
+.workflow-step h3,
+.trust-card h3 {
   margin: 0 0 12px;
   font-size: 24px;
   line-height: 1.05;
@@ -343,6 +345,7 @@
 .insight-card p,
 .feature-card p,
 .workflow-step p,
+.trust-card p,
 .final-cta p {
   margin: 0;
   color: #5b554f;
@@ -390,12 +393,25 @@
   list-style: none;
 }
 
+.proof-section .proof-list {
+  margin-top: 30px;
+}
+
 .proof-section li {
   padding: 18px 20px;
   background: #111111;
   color: #fff7ed;
   border-radius: 18px;
   font-weight: 700;
+}
+
+.trust-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.trust-card {
+  background: #ffffff;
 }
 
 .final-cta {
