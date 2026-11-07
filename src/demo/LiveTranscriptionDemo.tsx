@@ -200,10 +200,9 @@ function Library({ frame }: { frame: DemoFrame }) {
       <div className="demo-search"><SearchIcon /> Search recordings</div>
       <div className="demo-folders">
         <FolderChip label="All" kind="all" />
-        <FolderChip label="Unfiled" kind="unfiled" />
+        <FolderChip label="No Folder" kind="unfiled" />
         <FolderChip label="Work" kind="work" />
         <FolderChip label="Clients" kind="clients" />
-        <FolderChip label="New" kind="new" />
         <FolderChip label="New" kind="new" />
       </div>
       <div className={`demo-list ${hasNote ? 'has-new-note' : ''}`}>
