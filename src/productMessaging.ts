@@ -19,7 +19,7 @@ export const voicelyMessaging = {
     subheadline:
       'Voicely transcribes while you record and finishes moments after you stop. The speech models come with the app, so your audio is never uploaded to be transcribed. Copy the text into the AI assistant you already use for summaries and action items.',
   },
-  facts: ['Free', 'No account', 'Transcribes offline', 'Chinese and English, even mixed'],
+  facts: ['Free', 'No account', 'Transcribes offline', 'Many languages, even mixed'],
   features: [
     {
       title: 'Text while you record',
@@ -34,7 +34,7 @@ export const voicelyMessaging = {
     {
       title: 'Mixed languages',
       description:
-        'Auto Detect handles meetings that switch between languages, such as Chinese with English. For all-English recordings, choose English to transcribe faster.',
+        'Auto Detect handles many languages, including meetings that switch between them, for example Chinese with English. For all-English recordings, choose English to transcribe faster.',
     },
     {
       title: 'Stops on time',
