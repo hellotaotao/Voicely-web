@@ -88,12 +88,12 @@
 
 .hero-section {
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.78fr);
-  gap: 64px;
+  grid-template-columns: 1fr;
+  gap: 48px;
   align-items: center;
   width: min(1160px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 92px 0 76px;
+  padding: 76px 0 76px;
 }
 
 .hero-copy h1,
@@ -136,110 +136,43 @@
   margin-top: 34px;
 }
 
-.phone-stage {
-  display: flex;
+.hero-copy {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-copy h1 {
+  max-width: none;
+  font-size: clamp(46px, 7vw, 88px);
+}
+
+.hero-copy .hero-subtitle {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hero-copy .hero-actions {
   justify-content: center;
 }
 
-.phone-frame {
-  width: min(100%, 390px);
-  padding: 18px;
-  background: #151515;
-  border: 10px solid #050505;
-  border-radius: 44px;
-  box-shadow:
-    0 40px 90px rgba(49, 36, 24, 0.22),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+.app-shot {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
 }
 
-.phone-topbar,
-.record-meta {
-  display: flex;
-  justify-content: space-between;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.recording-card,
-.transcript-card,
-.mini-list > div {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-}
-
-.recording-card {
-  margin-top: 22px;
-  padding: 22px;
-  color: #ffffff;
-  background: linear-gradient(145deg, #28231f, #0e0e0e);
-}
-
-.card-label {
-  margin: 0 0 8px;
-  color: #bca58d;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.recording-card h2 {
-  margin: 0;
-  font-size: 26px;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-}
-
-.waveform {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  height: 86px;
-  margin: 22px 0;
-}
-
-.waveform span {
-  width: 7px;
-  min-height: 16px;
-  background: linear-gradient(180deg, #fff5e7, #d59f68);
-  border-radius: 99px;
-}
-
-.transcript-card {
-  margin-top: 14px;
-  padding: 20px;
-  color: #201b17;
-  background: #fff8ee;
-}
-
-.transcript-card p:last-child {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.55;
-}
-
-.mini-list {
-  display: grid;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.mini-list > div {
-  padding: 14px 16px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.mini-list strong,
-.mini-list span {
+.app-shot img {
   display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(49, 36, 24, 0.22)) drop-shadow(0 2px 6px rgba(49, 36, 24, 0.12));
 }
 
-.mini-list span {
-  margin-top: 4px;
-  color: rgba(255, 255, 255, 0.58);
-  font-size: 13px;
+.app-shot figcaption {
+  margin-top: 18px;
+  color: #7a6655;
+  font-size: 14px;
+  text-align: center;
 }
 
 .audience-strip,

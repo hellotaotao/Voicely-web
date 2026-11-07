@@ -40,48 +40,15 @@ function App() {
           </div>
         </div>
 
-        <div className="phone-stage" aria-label="Voicely app preview">
-          <div className="phone-frame">
-            <div className="phone-topbar">
-              <span>9:41</span>
-              <span>Voicely</span>
-              <span>●●●</span>
-            </div>
-            <div className="recording-card active-recording">
-              <div>
-                <p className="card-label">Recording</p>
-                <h2>Weekly product sync</h2>
-              </div>
-              <div className="waveform" aria-hidden="true">
-                {Array.from({ length: 18 }).map((_, index) => (
-                  <span key={index} style={{ height: `${22 + ((index * 17) % 48)}px` }} />
-                ))}
-              </div>
-              <div className="record-meta">
-                <span>47:18</span>
-                <span>Stops at 10:00</span>
-              </div>
-            </div>
-
-            <div className="transcript-card">
-              <p className="card-label">Transcript</p>
-              <p>
-                “Let’s move the launch to next Thursday.” “好，那我把 checklist 更新一下，下午发给大家。”
-              </p>
-            </div>
-
-            <div className="mini-list">
-              <div>
-                <strong>Client call</strong>
-                <span>52 min · Work</span>
-              </div>
-              <div>
-                <strong>Design review</strong>
-                <span>1 h 12 min · Work</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <figure className="app-shot">
+          <img
+            src="/screenshots/mac-meeting-transcript.webp"
+            width={2202}
+            height={1676}
+            alt="Voicely on a Mac: the note list with folders on the left, and on the right a finished meeting transcript that switches between English and Chinese, below the recording's waveform and playback controls."
+          />
+          <figcaption>Voicely on a Mac, showing a sample meeting.</figcaption>
+        </figure>
       </section>
 
       <section className="audience-strip facts-strip" aria-label="Key facts">
