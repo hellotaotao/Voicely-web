@@ -10,126 +10,90 @@ export type WorkflowStep = {
 
 export const voicelyMessaging = {
   productName: 'Voicely',
-  platform: 'iOS, iPhone, WhisperKit/CoreML, and optional iCloud workflows',
+  platforms: ['iPhone', 'iPad', 'Mac'],
+  /** Set once the App Store listing is live; until then the page says it is coming. */
+  appStoreUrl: null as string | null,
   hero: {
-    eyebrow: 'Local-first transcription for sensitive meetings',
-    headline: 'Private meeting transcripts without sending audio to the cloud.',
+    eyebrow: 'Meeting transcription for iPhone, iPad and Mac',
+    headline: 'Meeting transcripts, made on your device.',
     subheadline:
-      'Voicely records 30-60 minute conversations and transcribes them on iPhone with WhisperKit/CoreML, so sensitive audio can stay on device and does not require a cloud transcription vendor.',
+      'Voicely transcribes while you record and finishes moments after you stop. The speech models come with the app, so your audio is never uploaded to be transcribed. Copy the text into the AI assistant you already use for summaries and action items.',
   },
-  audience: [
-    'Government contractors and public-sector teams handling restricted conversations.',
-    'Consulting and professional services teams documenting client meetings without forwarding audio to another vendor.',
-    'Legal, HR, and internal operations teams capturing interviews, investigations, and policy discussions.',
-    'Enterprise teams with sensitive strategy, finance, product, or customer meetings.',
-    'Privacy-conscious professionals who need transcripts without making every recording a cloud artifact.',
-  ],
-  painPoints: [
-    {
-      title: 'Cloud transcription creates compliance friction',
-      description:
-        'Cloud transcription is convenient, but many business, government, consulting, legal, HR, and internal meetings cannot send raw audio to a third-party transcription API.',
-    },
-    {
-      title: 'Sensitive meetings are not quick memos',
-      description:
-        'The valuable sessions are often 30-60 minute client calls, interviews, strategy reviews, and compliance-sensitive discussions where privacy matters more than instant capture.',
-    },
-    {
-      title: 'Recordings need retention choices',
-      description:
-        'Some workflows need a transcript-only record, local review before export, or deleting audio after transcription. Voicely is shaped around user-controlled storage decisions instead of a mandatory cloud upload path.',
-    },
-    {
-      title: 'Searchable records still matter after the meeting',
-      description:
-        'Teams still need action items, quotes, decisions, and searchable history. Local transcription turns meeting audio into usable text while reducing exposure of the original recording.',
-    },
-  ] satisfies MessagingCard[],
+  facts: ['Free', 'No account', 'Transcribes offline', 'Chinese and English, even mixed'],
   features: [
     {
-      title: 'Local WhisperKit/CoreML transcription',
+      title: 'Text while you record',
       description:
-        'WhisperKit runs Whisper models through CoreML on iPhone, tying the model choice to a practical privacy outcome: transcription can happen locally without a cloud transcription service.',
+        'The transcript builds as the meeting goes. When you stop, Voicely finishes the last few seconds and the note is ready.',
     },
     {
-      title: 'Audio does not need to leave the device',
+      title: 'Keeps going when you lock the screen',
       description:
-        'The core transcript path is on-device. iCloud can be treated as an Apple continuity option, not a dependency for creating text from a sensitive meeting.',
+        'Lock your iPhone or switch apps and the recording and transcription carry on. Pause or resume from the Lock Screen and Dynamic Island.',
     },
     {
-      title: 'Privacy by architecture',
+      title: 'Mixed languages',
       description:
-        'Voicely is not positioned as an online API wrapper. The product boundary starts with record, process, and review on the device before a user chooses any export or sync workflow.',
+        'Auto Detect handles meetings that switch between languages, such as Chinese with English. For all-English recordings, choose English to transcribe faster.',
     },
     {
-      title: 'Built for meeting-length sessions',
+      title: 'Stops on time',
       description:
-        'Longer recordings need visible progress, cancellation, and pending queues so a 30-60 minute meeting feels controlled instead of stuck.',
+        'Set a length or an end time before or during a recording. You get a reminder before it stops and can extend it with one tap, so a forgotten recording does not run for hours.',
     },
     {
-      title: 'User-controlled retention model',
+      title: 'Tap a sentence to hear it',
       description:
-        'The workflow is oriented around deciding what to keep: transcript-only notes, retained local audio, deleting recordings after review, or exporting text where policy allows.',
+        'Playback starts from the sentence you tap, and the transcript follows along while it plays.',
     },
     {
-      title: 'Native iOS controls for serious work',
+      title: 'Folders and search',
       description:
-        'A SwiftUI app with recording, playback, model settings, language settings, sync status, and transcription state gives sensitive workflows clear operational controls.',
-    },
-  ] satisfies MessagingCard[],
-  useCases: [
-    {
-      title: 'Government and regulated programs',
-      description:
-        'Capture meetings where procurement, program, policy, or citizen data makes third-party audio processing difficult to approve.',
+        'Sort notes into up to four folders. Search titles and full transcripts, with every match highlighted in the note.',
     },
     {
-      title: 'Consulting and professional services',
+      title: 'Import audio files',
       description:
-        'Turn client workshops and discovery calls into searchable transcripts without automatically sending client audio to an external transcription vendor.',
+        'Bring in recordings from Files or other apps and transcribe them the same way.',
     },
     {
-      title: 'Legal, HR, and internal operations',
+      title: 'Sync through your iCloud',
       description:
-        'Document interviews, investigations, employee relations, and policy discussions with a local-first transcription path.',
-    },
-    {
-      title: 'Enterprise strategy meetings',
-      description:
-        'Review finance, product, customer, and leadership conversations as text while keeping the raw recording under tighter user control.',
+        'Turn on iCloud for Voicely and your notes appear on your other devices, through your own iCloud account.',
     },
   ] satisfies MessagingCard[],
   workflow: [
-    { action: 'Record', detail: 'Capture the meeting on iPhone when policy allows a local recording.' },
-    { action: 'Transcribe locally', detail: 'Voicely converts the audio with WhisperKit/CoreML without requiring cloud upload.' },
-    { action: 'Review', detail: 'Scan the transcript, replay locally when needed, and clean up names, decisions, or action items.' },
-    { action: 'Keep or delete', detail: 'Choose whether to retain the audio, move toward transcript-only storage, or delete the recording after review.' },
-    { action: 'Export', detail: 'Share the transcript into the approved client, case, HR, or internal documentation system.' },
+    { action: 'Record', detail: 'Tap record when the meeting starts, and set it to stop at the end time if you like.' },
+    { action: 'Read along', detail: 'The transcript appears while people talk, on the device in your hand.' },
+    { action: 'Stop', detail: 'The last few seconds are transcribed and the note is complete.' },
+    { action: 'Summarize', detail: 'Copy the transcript into ChatGPT, Claude or any assistant for minutes and action items.' },
   ] satisfies WorkflowStep[],
-  trust: [
+  privacy: [
     {
-      title: 'Local by default for transcription',
+      title: 'Transcribed on the device',
       description:
-        'The privacy promise comes from architecture: the transcript can be produced on the device instead of by sending meeting audio to an online transcription API.',
+        'Speech recognition runs on your iPhone, iPad or Mac. It works without an internet connection, and audio is never sent anywhere to be transcribed.',
     },
     {
-      title: 'Cloud is a choice, not the transcription engine',
+      title: 'Nothing for us to see',
       description:
-        'Sync and export should stay under user control. The fundamental value is that sensitive audio does not need cloud processing to become text.',
+        'No account, no ads, no analytics, and no developer server. Recordings and transcripts stay on your devices and, if you turn it on, in your own iCloud account.',
     },
     {
-      title: 'Retention can match policy',
+      title: 'Honest limits',
       description:
-        'Voicely is being shaped for workflows where teams may keep only the transcript, retain audio locally, or delete recordings after transcription when policy requires it.',
+        'Voicely holds no compliance certification and does not replace your organization’s consent or retention rules. Accuracy depends on the audio: distance, noise and people talking over each other.',
     },
   ] satisfies MessagingCard[],
-  proof: [
-    'Native SwiftUI iOS app',
-    'Local WhisperKit/CoreML transcription engine',
-    'No cloud transcription API required to produce text',
-    'SwiftData + CloudKit/iCloud architecture for optional Apple continuity workflows',
-    'Recording, playback, settings, sync status, progress, cancellation, queues, and transcription services already modeled',
-    'Product direction accounts for transcript-only and delete-audio-after-review retention workflows',
+  underTheHood: [
+    'Qwen3-ASR 0.6B for every language, on the GPU on Mac and the Neural Engine on iPhone and iPad',
+    'Parakeet TDT 0.6B v2 for long English passages and English-only recordings',
+    'Voice activity detection that skips silence and cuts audio at pauses',
+    'Both models ship inside the app: nothing to download after install',
+  ],
+  requirements: [
+    'iPhone or iPad with iOS / iPadOS 18 or later',
+    'Mac with Apple silicon and macOS 15 or later',
+    'About 1.4 GB of storage (1.5 GB on Mac), mostly the speech models',
   ],
 }

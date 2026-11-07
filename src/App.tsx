@@ -1,6 +1,17 @@
 import './App.css'
 import { voicelyMessaging } from './productMessaging'
 
+function AppStoreCallToAction({ className }: { className: string }) {
+  if (voicelyMessaging.appStoreUrl) {
+    return (
+      <a className={className} href={voicelyMessaging.appStoreUrl}>
+        Get it free on the App Store
+      </a>
+    )
+  }
+  return <span className={`${className} is-pending`}>Coming soon to the App Store</span>
+}
+
 function App() {
   return (
     <main className="page-shell">
@@ -10,13 +21,12 @@ function App() {
           Voicely
         </a>
         <div className="nav-links">
-          <a href="#problems">Problems</a>
-          <a href="#difference">Difference</a>
-          <a href="#use-cases">Use cases</a>
-          <a href="#workflow">Workflow</a>
-          <a href="#trust">Trust</a>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#privacy">Privacy</a>
+          <a href="/support">Support</a>
         </div>
-        <a className="nav-cta" href="#waitlist">Join waitlist</a>
+        <AppStoreCallToAction className="nav-cta" />
       </nav>
 
       <section id="top" className="hero-section">
@@ -25,8 +35,8 @@ function App() {
           <h1>{voicelyMessaging.hero.headline}</h1>
           <p className="hero-subtitle">{voicelyMessaging.hero.subheadline}</p>
           <div className="hero-actions" aria-label="Primary actions">
-            <a className="primary-button" href="#workflow">See the workflow</a>
-            <a className="secondary-button" href="#difference">Why local matters</a>
+            <AppStoreCallToAction className="primary-button" />
+            <a className="secondary-button" href="#how-it-works">How it works</a>
           </div>
         </div>
 
@@ -34,13 +44,13 @@ function App() {
           <div className="phone-frame">
             <div className="phone-topbar">
               <span>9:41</span>
-              <span>Sensitive Meeting</span>
+              <span>Voicely</span>
               <span>●●●</span>
             </div>
             <div className="recording-card active-recording">
               <div>
-                <p className="card-label">Recording locally</p>
-                <h2>Client compliance review</h2>
+                <p className="card-label">Recording</p>
+                <h2>Weekly product sync</h2>
               </div>
               <div className="waveform" aria-hidden="true">
                 {Array.from({ length: 18 }).map((_, index) => (
@@ -49,59 +59,43 @@ function App() {
               </div>
               <div className="record-meta">
                 <span>47:18</span>
-                <span>On-device transcription</span>
+                <span>Stops at 10:00</span>
               </div>
             </div>
 
             <div className="transcript-card">
               <p className="card-label">Transcript</p>
               <p>
-                “We need a searchable transcript for the file, but the raw meeting audio cannot be sent to an outside transcription service.”
+                “Let’s move the launch to next Thursday.” “好，那我把 checklist 更新一下，下午发给大家。”
               </p>
             </div>
 
             <div className="mini-list">
               <div>
-                <strong>Government program review</strong>
-                <span>Local transcript · 52 min</span>
+                <strong>Client call</strong>
+                <span>52 min · Work</span>
               </div>
               <div>
-                <strong>HR interview notes</strong>
-                <span>Review audio · export transcript</span>
+                <strong>Design review</strong>
+                <span>1 h 12 min · Work</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="audience-strip" aria-label="Who Voicely is for">
-        {voicelyMessaging.audience.map((item) => (
+      <section className="audience-strip facts-strip" aria-label="Key facts">
+        {voicelyMessaging.facts.map((item) => (
           <article key={item}>{item}</article>
         ))}
       </section>
 
-      <section id="problems" className="content-section warm-section">
-        <div className="section-heading">
-          <p className="eyebrow">Why local matters</p>
-          <h2>Cloud transcription is useful until policy says the audio cannot leave.</h2>
-        </div>
-        <div className="card-grid two-column">
-          {voicelyMessaging.painPoints.map((pain) => (
-            <article className="insight-card" key={pain.title}>
-              <span className="dot" />
-              <h3>{pain.title}</h3>
-              <p>{pain.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="difference" className="content-section light-section">
+      <section id="features" className="content-section light-section">
         <div className="section-heading centered">
-          <p className="eyebrow">The difference</p>
-          <h2>Local WhisperKit/CoreML processing makes privacy a product boundary.</h2>
+          <p className="eyebrow">Features</p>
+          <h2>Made for meetings that run an hour, not ten-second memos.</h2>
         </div>
-        <div className="feature-grid">
+        <div className="feature-grid four-column">
           {voicelyMessaging.features.map((feature) => (
             <article className="feature-card" key={feature.title}>
               <h3>{feature.title}</h3>
@@ -111,28 +105,12 @@ function App() {
         </div>
       </section>
 
-      <section id="use-cases" className="content-section warm-section">
+      <section id="how-it-works" className="workflow-section">
         <div className="section-heading">
-          <p className="eyebrow">Use cases</p>
-          <h2>Built for meetings where convenience has to answer to policy.</h2>
+          <p className="eyebrow">How it works</p>
+          <h2>From the meeting to minutes in your AI assistant.</h2>
         </div>
-        <div className="card-grid two-column">
-          {voicelyMessaging.useCases.map((useCase) => (
-            <article className="insight-card" key={useCase.title}>
-              <span className="dot" />
-              <h3>{useCase.title}</h3>
-              <p>{useCase.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="workflow" className="workflow-section">
-        <div className="section-heading">
-          <p className="eyebrow">Meeting workflow</p>
-          <h2>Record, transcribe locally, review, then decide what should remain.</h2>
-        </div>
-        <div className="workflow-rail">
+        <div className="workflow-rail four-steps">
           {voicelyMessaging.workflow.map((step, index) => (
             <article className="workflow-step" key={step.action}>
               <span>{String(index + 1).padStart(2, '0')}</span>
@@ -143,18 +121,18 @@ function App() {
         </div>
       </section>
 
-      <section id="trust" className="proof-section">
+      <section id="privacy" className="proof-section">
         <div>
-          <p className="eyebrow">Trust and privacy</p>
-          <h2>Designed for sensitive meeting audio from the first product decision.</h2>
-          <ul className="proof-list" aria-label="Architecture proof points">
-            {voicelyMessaging.proof.map((proof) => (
-              <li key={proof}>{proof}</li>
+          <p className="eyebrow">Privacy and how it runs</p>
+          <h2>The transcript is made where the recording is.</h2>
+          <ul className="proof-list" aria-label="What runs inside the app">
+            {voicelyMessaging.underTheHood.map((item) => (
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
         <div className="trust-stack">
-          {voicelyMessaging.trust.map((item) => (
+          {voicelyMessaging.privacy.map((item) => (
             <article className="trust-card" key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
@@ -163,16 +141,19 @@ function App() {
         </div>
       </section>
 
-      <section id="waitlist" className="final-cta">
+      <section className="final-cta">
         <p className="eyebrow">Voicely</p>
-        <h2>Turn sensitive meetings into transcripts without a cloud transcription handoff.</h2>
-        <p>
-          Join the early-access list for a local-first iOS meeting transcription app built around WhisperKit/CoreML, user-controlled retention, and compliance-sensitive workflows.
-        </p>
-        <a className="primary-button" href="#top">Back to top</a>
+        <h2>Free for iPhone, iPad and Mac.</h2>
+        <ul className="requirements" aria-label="Requirements">
+          {voicelyMessaging.requirements.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <AppStoreCallToAction className="primary-button" />
         <div className="footer-links" aria-label="Public pages">
           <a href="/privacy">Privacy Policy</a>
           <a href="/support">Support</a>
+          <a href="mailto:hellotaotao@gmail.com">Contact</a>
         </div>
       </section>
     </main>
