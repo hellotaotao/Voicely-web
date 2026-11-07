@@ -17,7 +17,7 @@ export const voicelyMessaging = {
     eyebrow: 'Meeting transcription for iPhone, iPad and Mac',
     headline: 'Meeting transcripts, made on your device.',
     subheadline:
-      'Voicely transcribes while you record and finishes moments after you stop. The speech models come with the app, so your audio is never uploaded to be transcribed. Copy the text into the AI assistant you already use for summaries and action items.',
+      'Voicely transcribes while you record and finishes moments after you stop. The speech models come with the app, so your audio is never uploaded to be transcribed.',
   },
   facts: ['Free', 'No account', 'Transcribes offline', 'Many languages, even mixed'],
   features: [
@@ -66,7 +66,7 @@ export const voicelyMessaging = {
     { action: 'Record', detail: 'Tap record when the meeting starts, and set it to stop at the end time if you like.' },
     { action: 'Read along', detail: 'The transcript appears while people talk, on the device in your hand.' },
     { action: 'Stop', detail: 'The last few seconds are transcribed and the note is complete.' },
-    { action: 'Summarize', detail: 'Copy the transcript into ChatGPT, Claude or any assistant for minutes and action items.' },
+    { action: 'Use it', detail: 'Copy or share the text, or find it later by searching across all your notes.' },
   ] satisfies WorkflowStep[],
   privacy: [
     {

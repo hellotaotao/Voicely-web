@@ -30,13 +30,21 @@ describe('voicelyMessaging', () => {
     expect(privacyText).toContain('no compliance certification')
   })
 
-  it('walks from recording to a summary in an AI assistant', () => {
+  it('walks from recording to using the transcript', () => {
     expect(voicelyMessaging.workflow.map((step) => step.action)).toEqual([
       'Record',
       'Read along',
       'Stop',
-      'Summarize',
+      'Use it',
     ])
+  })
+
+  it('promises only that audio stays on the device, not where the text goes', () => {
+    const allText = messagingText()
+
+    for (const phrase of ['ai assistant', 'chatgpt', 'claude', 'summar', 'action items', 'minutes']) {
+      expect(allText).not.toContain(phrase)
+    }
   })
 
   it('lists the requirements a buyer needs before installing', () => {

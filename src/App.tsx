@@ -70,7 +70,7 @@ function App() {
       <section id="how-it-works" className="workflow-section">
         <div className="section-heading">
           <p className="eyebrow">How it works</p>
-          <h2>From the meeting to minutes in your AI assistant.</h2>
+          <h2>From a long meeting to a searchable transcript.</h2>
         </div>
         <div className="workflow-rail four-steps">
           {voicelyMessaging.workflow.map((step, index) => (
