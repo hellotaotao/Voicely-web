@@ -1,4 +1,5 @@
 import './App.css'
+import { LiveTranscriptionDemo } from './demo/LiveTranscriptionDemo'
 import { voicelyMessaging } from './productMessaging'
 
 function AppStoreCallToAction({ className }: { className: string }) {
@@ -40,15 +41,9 @@ function App() {
           </div>
         </div>
 
-        <figure className="app-shot">
-          <img
-            src="/screenshots/mac-meeting-transcript.webp"
-            width={2202}
-            height={1676}
-            alt="Voicely on a Mac: the note list with folders on the left, and on the right a finished meeting transcript that switches between English and Chinese, below the recording's waveform and playback controls."
-          />
-          <figcaption>Voicely on a Mac, showing a sample meeting.</figcaption>
-        </figure>
+        <div className="app-shot">
+          <LiveTranscriptionDemo />
+        </div>
       </section>
 
       <section className="audience-strip facts-strip" aria-label="Key facts">

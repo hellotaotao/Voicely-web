@@ -161,20 +161,6 @@
   margin: 8px 0 0;
 }
 
-.app-shot img {
-  display: block;
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 30px 60px rgba(49, 36, 24, 0.22)) drop-shadow(0 2px 6px rgba(49, 36, 24, 0.12));
-}
-
-.app-shot figcaption {
-  margin-top: 18px;
-  color: #7a6655;
-  font-size: 14px;
-  text-align: center;
-}
-
 .audience-strip,
 .content-section,
 .workflow-section,
