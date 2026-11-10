@@ -11,8 +11,8 @@ export type WorkflowStep = {
 export const voicelyMessaging = {
   productName: 'Voicely',
   platforms: ['iPhone', 'iPad', 'Mac'],
-  /** Set once the App Store listing is live; until then the page says it is coming. */
-  appStoreUrl: null as string | null,
+  /** While null, the page says the app is coming soon instead of linking to the App Store. */
+  appStoreUrl: 'https://apps.apple.com/app/id6746871154' as string | null,
   hero: {
     eyebrow: 'Meeting transcription for iPhone, iPad and Mac',
     headline: 'Meeting transcripts, made on your device.',

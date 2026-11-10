@@ -14,6 +14,10 @@ describe('voicelyMessaging', () => {
     expect(heroText).toContain('never uploaded')
   })
 
+  it('links to the live App Store listing', () => {
+    expect(voicelyMessaging.appStoreUrl).toBe('https://apps.apple.com/app/id6746871154')
+  })
+
   it('no longer mentions the retired Whisper engine or model downloads', () => {
     const allText = messagingText()
 
