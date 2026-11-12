@@ -115,6 +115,8 @@ function App() {
         <div className="footer-links" aria-label="Public pages">
           <a href="/privacy">Privacy Policy</a>
           <a href="/support">Support</a>
+          <a href="/compare/transcription-apps">Compare transcription apps</a>
+          <a href="/guides/does-my-transcription-app-upload-audio">Does my app upload audio?</a>
           <a href="mailto:hellotaotao@gmail.com">Contact</a>
         </div>
       </section>
